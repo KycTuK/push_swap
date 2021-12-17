@@ -18,11 +18,18 @@ t_stack* getLastNode(t_stack* node)
     return node;
 }
 
-t_stack* getLastButOne(t_stack* node)
+t_stack* getPenult(t_stack* node)
 {
     if (!node || !node->next)
         return NULL;
     while (node->next->next)
         node = node->next;
     return node;
+}
+
+int doesNodeExist(t_stack** node)
+{
+    if (node && *node)
+        return 1;
+    return 0;
 }

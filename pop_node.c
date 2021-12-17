@@ -13,13 +13,12 @@ int pop(t_stack **head)
 {
     t_stack *prev;
     int num;
-    if (!head)
+    if (!head || !*head)
         exit(-1);
     prev = (*head);
     num = prev->num;
     (*head) = (*head)->next;
-    // free(prev);
-    freeNode(prev);
+    freeNode(&prev);
     return num;
 }
 
@@ -28,7 +27,7 @@ void popBack(t_stack **head)
     t_stack *lastbn;
     if (!head || !*head) // Получили NULL || Список пуст
         exit(-1);
-    lastbn = getLastButOne(*head);
+    lastbn = getPenult(*head);
     if (!lastbn) // Если в списке один элемент
         freeNode(head);
     else
@@ -40,11 +39,21 @@ int popNth(t_stack **head, unsigned n) {
         return pop(head);
     else
     {
-        t_stack *prev = getNth(*head, n-1);
-        t_stack *elm  = prev->next;
-        int val = elm->num;
-        prev->next = elm->next;
-        free(elm);
+        t_stack *prev = getNthNode(*head, n-1);
+        t_stack *curr = prev->next;
+        int val = curr->num;
+        prev->next = curr->next;
+        freeNode(&curr);
         return val;
     }
+}
+
+void popList(t_stack **head)
+{
+    while ((*head)->next) 
+    {
+        pop(head);
+        *head = (*head)->next;
+    }
+    freeNode(*head);
 }

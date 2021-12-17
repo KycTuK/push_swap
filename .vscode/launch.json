@@ -34,9 +34,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "c:/Users/Professional/Desktop/push_swap/push_swap",
+      "cwd": "c:/Projects/push_swap",
       "environment": [],
-      "program": "c:/Users/Professional/Desktop/push_swap/push_swap/build/Debug/outDebug",
+      "program": "c:/Projects/push_swap/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "c:/mingw/bin/gdb.exe",

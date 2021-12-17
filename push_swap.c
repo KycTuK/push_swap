@@ -3,6 +3,7 @@
 int main()
 {
     t_stack *a;
+    printf("%p\n",a);
     a = NULL;
     push(&a, 10);
     push(&a, 11);
@@ -11,8 +12,8 @@ int main()
     push(&a, 13);
     pushBack(a, 9);
     popBack(&a);
-    pushBack(a, 8);
-    insert(a, 1, 5);
+    // pushBack(a, 8);
+    // insert(a, 1, 5);
     printStack(a);
     // printStackRev(a);
     // printStackRev(a);

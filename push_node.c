@@ -35,8 +35,5 @@ void insert(t_stack *head, unsigned n, int num)
     unsigned i = 0;
     while (i++ < n && head->next)
         head = head->next;
-    if (head->next)
-        head->next = pushNewNode(head->next, num);
-    else
-        head->next = pushNewNode(NULL, num);
+    head->next = pushNewNode(head->next, num);
 }

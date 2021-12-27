@@ -14,5 +14,9 @@
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.cCompilerPath": "C:/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:/MinGW/bin/g++.exe",
-  "C_Cpp_Runner.debuggerPath": "c:/mingw/bin/gdb.exe"
+  "C_Cpp_Runner.debuggerPath": "c:/mingw/bin/gdb.exe",
+  "files.associations": {
+    "push_swap.h": "c",
+    "time.h": "c"
+  }
 }

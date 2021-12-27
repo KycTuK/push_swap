@@ -37,3 +37,11 @@ void insert(t_stack *head, unsigned n, int num)
         head = head->next;
     head->next = pushNewNode(head->next, num);
 }
+
+void pushNrand(void (*fpush)(t_stack **head, int num), t_stack **head, int times)
+{
+    if (times <= 0)
+        return ;
+    while (times--)
+        fpush(head, irand(__RAND_MAX__));
+}

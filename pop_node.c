@@ -55,5 +55,5 @@ void popList(t_stack **head)
         pop(head);
         *head = (*head)->next;
     }
-    freeNode(*head);
+    freeNode(head);
 }

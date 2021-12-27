@@ -2,6 +2,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+# include <time.h>
+# include <math.h>
+
+# define uint unsigned int
+# define ulint unsigned long int
+
+# define __RAND_MAX__ 100
+
 typedef struct  s_stack
 {
     int             num;
@@ -12,6 +20,7 @@ typedef struct  s_stack
 void push(t_stack **head, int num);
 void pushBack(t_stack *head, int num);
 void insert(t_stack *head, unsigned n, int num);
+void pushNrand(void (*fpush)(t_stack **head, int num), t_stack **head, int times);
 
 // pop_node.c
 int pop(t_stack **head);
@@ -29,3 +38,5 @@ void printNode(t_stack *node, int node_num);
 void printStack(t_stack *node);
 void printStackRev(t_stack *node);
 
+// utils.c
+int irand(int max);

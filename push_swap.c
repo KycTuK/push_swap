@@ -18,7 +18,9 @@ int main()
     // printStackRev(a);
     // printStackRev(a);
 
-    pushNrand(push, &a, 10);
+    // printf("%p", getLastNode(a));
+    // pushBack(&a, 10);
+    pushNrand(pushBack, &a, 10);
     printStack(a);
 
     // printf("%d\n",irand(10));

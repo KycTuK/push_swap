@@ -18,7 +18,7 @@ typedef struct  s_stack
 
 // push_node.c
 void push(t_stack **head, int num);
-void pushBack(t_stack *head, int num);
+void pushBack(t_stack **head, int num);
 void insert(t_stack *head, unsigned n, int num);
 void pushNrand(void (*fpush)(t_stack **head, int num), t_stack **head, int times);
 

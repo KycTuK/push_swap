@@ -24,10 +24,13 @@ void push(t_stack **head, int num)
     *head = pushNewNode(*head, num);
 }
 
-void pushBack(t_stack *head, int num)
+void pushBack(t_stack **head, int num)
 {
-    t_stack *last = getLastNode(head);
-    last->next = pushNewNode(NULL, num);;
+    t_stack *last = getLastNode(*head);
+    if (last)
+        last->next = pushNewNode(NULL, num);
+    else
+        push(head, num);
 }
 
 void insert(t_stack *head, unsigned n, int num)

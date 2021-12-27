@@ -22,6 +22,9 @@ int main()
     // pushBack(&a, 10);
     pushNrand(pushBack, &a, 10);
     printStack(a);
+    printf("\n\n");
+    popNtimes(popBack, &a, 3);
+    printStack(a);
 
     // printf("%d\n",irand(10));
     // printNode(a);

@@ -23,9 +23,10 @@ void insert(t_stack *head, unsigned n, int num);
 void pushNrand(void (*fpush)(t_stack **head, int num), t_stack **head, int times);
 
 // pop_node.c
-int pop(t_stack **head);
+void pop(t_stack **head);
 void popBack(t_stack **head);
 void popList(t_stack **head);
+void popNtimes(void (*fpop)(t_stack **head), t_stack **head, int times);
 
 // get_node.c
 t_stack* getNthNode(t_stack* node, int n);

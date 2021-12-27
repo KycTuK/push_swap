@@ -9,7 +9,7 @@ static void freeNode(t_stack **node)
     }
 }
 
-int pop(t_stack **head)
+void pop(t_stack **head)
 {
     t_stack *prev;
     int num;
@@ -19,7 +19,7 @@ int pop(t_stack **head)
     num = prev->num;
     (*head) = (*head)->next;
     freeNode(&prev);
-    return num;
+    // return num;
 }
 
 void popBack(t_stack **head)
@@ -36,7 +36,7 @@ void popBack(t_stack **head)
 
 int popNth(t_stack **head, unsigned n) {
     if (!n) 
-        return pop(head);
+        pop(head);
     else
     {
         t_stack *prev = getNthNode(*head, n-1);
@@ -56,4 +56,12 @@ void popList(t_stack **head)
         *head = (*head)->next;
     }
     freeNode(head);
+}
+
+void popNtimes(void (*fpop)(t_stack **head), t_stack **head, int times)
+{
+    if (times <= 0)
+        return ;
+    while (times-- && head)
+        fpop(head);
 }

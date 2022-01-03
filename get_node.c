@@ -11,7 +11,7 @@ t_stack* getNthNode(t_stack* node, int n)
     return node;
 }
 
-t_stack* getLastNode(t_stack* node)
+t_stack* getLast(t_stack* node)
 {
     while (node && node->next)
         node = node->next;
@@ -27,9 +27,14 @@ t_stack* getPenult(t_stack* node)
     return node;
 }
 
-int doesNodeExist(t_stack** node)
+size_t getSize(t_stack* head)
 {
-    if (node && *node)
-        return 1;
-    return 0;
+    size_t stackSize;
+    stackSize = 0;
+    while (head)
+    {
+        head = head->next;
+        stackSize++;
+    }
+    return stackSize;
 }

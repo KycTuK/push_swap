@@ -1,34 +1,24 @@
 # include "push_swap.h"
 
-static void *ft_malloc(size_t size)
-{
-    void *result;
-
-    result = malloc(size);
-    if (!result)
-        exit(EXIT_FAILURE);
-    return (result);
-}
-
-static t_stack* pushNewNode(t_stack* next_node, int num)
+static t_stack* getNewNode(t_stack *head, int num)
 {
     t_stack* node;
-    node = ft_malloc(sizeof(t_stack));
+    node = ft_calloc(sizeof(t_stack));
+    node->next = head;
     node->num = num;
-    node->next = next_node;
     return (node);
 }
 
 void push(t_stack **head, int num)
 {
-    *head = pushNewNode(*head, num);
+    *head = getNewNode(*head, num);
 }
 
 void pushBack(t_stack **head, int num)
 {
-    t_stack *last = getLastNode(*head);
+    t_stack *last = getLast(*head);
     if (last)
-        last->next = pushNewNode(NULL, num);
+        last->next = getNewNode(NULL, num);
     else
         push(head, num);
 }
@@ -38,7 +28,7 @@ void insert(t_stack *head, unsigned n, int num)
     unsigned i = 0;
     while (i++ < n && head->next)
         head = head->next;
-    head->next = pushNewNode(head->next, num);
+    head->next = getNewNode(head->next, num);
 }
 
 void pushNrand(void (*fpush)(t_stack **head, int num), t_stack **head, int times)

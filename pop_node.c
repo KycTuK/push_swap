@@ -62,6 +62,9 @@ void popNtimes(void (*fpop)(t_stack **head), t_stack **head, int times)
 {
     if (times <= 0)
         return ;
-    while (times-- && head)
+    while (--times && head)
+    {
+        printNode(*head, 0);
         fpop(head);
+    }
 }

@@ -17,6 +17,11 @@
   "C_Cpp_Runner.debuggerPath": "c:/mingw/bin/gdb.exe",
   "files.associations": {
     "push_swap.h": "c",
-    "time.h": "c"
+    "time.h": "c",
+    "exception": "c",
+    "get_node.h": "c",
+    "print_node.h": "c",
+    "utils.h": "c",
+    "def_types.h": "c"
   }
 }

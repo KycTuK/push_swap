@@ -10,10 +10,10 @@ void printNode(t_stack *node, int node_num)
         printf("|*|%d|\t", node->num);
         printf("|N|%d|\t", node_num);
         printf("\n");
-    } 
+    }
 }
 
-void printHead(t_stack *node)
+void printTop(t_stack *node)
 {
     printNode(node, 0);
 }
@@ -38,9 +38,9 @@ void printStackRev(t_stack *node)
         node_counter = 0;
 }
 
-void ShowStack(void (*fprint)(t_stack *head), t_stack *head)
+void ShowStack(void (*fprint)(t_stack*), t_stack *top)
 {
     symbRep("___", 20);
-    fprint(head);
+    fprint(top);
     printf("\n");
 }

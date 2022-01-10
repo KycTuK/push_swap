@@ -12,25 +12,25 @@ void atob(t_stack **a, t_stack **b)
     printf("\n");
 }
 
-void swapTwo(t_stack **head)
+void swapTwo(t_stack **top)
 {
     int tmp;
 
-    if (!(*head)->next)
+    if (!(*top)->next)
         return;
-    tmp = (*head)->num;
-    (*head)->num = (*head)->next->num;
-    (*head)->next->num = tmp;    
+    tmp = (*top)->num;
+    (*top)->num = (*top)->next->num;
+    (*top)->next->num = tmp;    
 }
 
-void swapLastTwo(t_stack **head)
+void swapLastTwo(t_stack **top)
 {
     int tmp;
     t_stack *penult;
 
-    if (!(*head)->next)
+    if (!(*top)->next)
         return;
-    penult = getPenult(*head);
+    penult = getPenult(*top);
     tmp = penult->num;
     penult->num = penult->next->num;
     penult->next->num = tmp;

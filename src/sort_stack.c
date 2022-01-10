@@ -2,23 +2,23 @@
 
 void quickSort(t_stack **a, t_stack **b)
 {
-    t_stack *head;
+    t_stack *top;
     t_stack *next;
     t_stack *pivot;
 
     if (!a || !*a)
         return;
-    head = *a;
-    pivot = head;
-    while (head->next)
+    top = *a;
+    pivot = top;
+    while (top->next)
     {
-        next = head->next;
+        next = top->next;
         if (next->num > pivot->num)
         {
             push(b, next->num);
-            head->next = next->next;
+            top->next = next->next;
             pop(&next);
         }
-        head = head->next;
+        top = top->next;
     }
 }
